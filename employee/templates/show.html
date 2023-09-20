@@ -29,8 +29,8 @@
         <td>{{ employee.eemail }}</td>  
         <td>{{ employee.econtact }}</td>  
         <td>  
-            <a href="/edit/{{ employee.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
-            <a href="/delete/{{ employee.id }}">Delete</a>  
+         <button class="btn btn-info" >   <a href="/edit/{{ employee.id }}"><span  >Edit</span></a></button>
+         <button class="btn btn-dark">  <a href="/delete/{{ employee.id }}">Delete</a></button>
         </td>  
     </tr>  
 {% endfor %}  
@@ -38,6 +38,20 @@
 </table>  
 <br>  
 <br>  
-<center><a href="/emp" class="btn btn-primary">Add New Record</a></center>  
+<center><a href="/emp" class="btn btn-dark" >Add New Record</a></center>  
 </body>  
 </html>  
+<style>
+    a {
+    color: #ff9900;
+    text-decoration: none;
+    background-color: transparent;
+
+    
+}
+.table .thead-dark th {
+    color: #fff;
+    background-color: #57bbb1;
+    border-color: #454d55;
+}
+</style>

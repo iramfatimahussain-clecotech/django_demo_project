@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :home
   resources :movies do
     collection do
       post :search

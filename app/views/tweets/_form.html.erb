@@ -1,0 +1,10 @@
+<%= form_with(model: @tweet, url: tweets_path) do |form| %>
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Movie Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-top: 5px;
+    }
+
+    #movies {
+      margin-top: 20px;
+    }
+
+    .movie {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    #title_search {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    #new-movie-link {
+      display: block;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1> Movie Page</h1>
+  </header>
+
+  <main>
+    <p style="color: green"><%= notice %></p>
+
+    <%= form_with url: search_movies_path, method: :post do |form| %>
+      <div id="title_search">Search Movie</div>
+      <%= form.search_field :title, oninput: "this.form.requestSubmit" %>
+    <% end %>
+
+    <h1>Movies</h1>
+
+    <div id="movies">
+      <% @movies.each do |movie| %>
+        <div class="movie">
+          <%= render movie %>
+          <p>
+            <%= link_to "Show this movie", movie %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+
+    <%= link_to "New movie", new_movie_path, id: "new-movie-link" %>
+  </main>
+</body>
+</html>

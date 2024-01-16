@@ -1,0 +1,91 @@
+<!-- app/views/inboxes/index.html.erb -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inboxes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #inboxes11 {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .inbox-item {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #fafafa;
+    }
+
+    .inbox-item p {
+      margin: 0;
+    }
+
+    .inbox-actions {
+      margin-top: 10px;
+    }
+
+    #new_inbox {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    #inbox_count {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    #inbox_count p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <p style="color: green"><%= notice %></p>
+
+  <h1>Inboxes <div id="inbox_count">
+    <%= render partial: 'inboxes/count', locals: { inboxes_count: Inbox.count } %>
+  </div> </h1>
+
+  <div id="inboxes">
+    <% @inboxes.each do |inbox| %>
+      <div class="inbox-item">
+        <%= render inbox %>
+        <p class="inbox-actions">
+          <%= link_to "Show this inbox", inbox_path(inbox) %>
+          <%= link_to "Edit this inbox", edit_inbox_path(inbox) %>
+          <%= button_to "Destroy this inbox", inbox_path(inbox), method: :delete, data: { turbo: false } %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="new_inbox">
+    <%= render partial: "inboxes/form", locals: { inbox: Inbox.new } %>
+  </div>
+ 
+</body>
+</html>
+
+
+<%#= button_to "New inbox", new_inbox_path %>

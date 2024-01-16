@@ -1,0 +1,9 @@
+<% if tweet.present? %>
+  <div id="<%= dom_id tweet %>">
+    <p>
+      <strong>Tweet:</strong>
+      <strong>Body:</strong>
+      <%= tweet.body %>
+    </p>
+  </div>
+<% end %>

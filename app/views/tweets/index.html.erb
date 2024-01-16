@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Tweets</h1>
+
+<div id="tweets">
+
+  
+  <%#= render partial: "tweets/form", locals: { tweet:Tweet.new } %>
+  <div id="new_tweet">
+   <%= render partial: "tweets/form", locals: { tweet:Tweet.new } %>
+  </div>
+
+  <%#= render "tweets/form", tweet: @tweet %>
+
+  <%= turbo_frame_tag "tweets" do%>
+    <%= render @tweets %>
+      <%= button_to "Destroy this tweet", @tweet, method: :delete %>
+  <% end %> 
+
+  <%= link_to "New tweet", new_tweet_path %>
+</div>

@@ -1,0 +1,18 @@
+<p style="color: green; font-size: 18px; font-weight: bold;"><%= notice %></p>
+<div class="flex justify-between items-center bg-gray-200 p-4">
+ <div><h1 class="text-3xl font-bold text-indigo-700">Comments</h1></div>
+  <div id="comments" class="min-w-full">
+    <% @comments.each do |comment| %>
+      <%= render comment %>
+      <p class="text-gray-600">
+        <%#= link_to "Show this comment", comment %>
+      </p>
+    <% end %>
+  </div>
+</div>
+<div>
+  <%= link_to "New comment", new_comment_path, 
+                data: { action: "click->dialog#open", turbo_frame: :modal }, 
+                class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium mt-4" %>
+</div>
+

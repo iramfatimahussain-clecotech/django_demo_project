@@ -21,7 +21,8 @@ gem "importmap-rails"
 gem 'hotwire-rails', '~> 0.1.0'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+#gem "turbo-rails"
+gem "turbo-rails", github: "hotwired/turbo-rails", branch: "main"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
@@ -75,3 +76,6 @@ end
 
 gem "faker", "~> 3.2"
 gem 'will_paginate'
+gem "view_component", "~> 2.48"
+
+gem "tailwindcss-rails"

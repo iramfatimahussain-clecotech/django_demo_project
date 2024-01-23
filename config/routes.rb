@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'events/index'
+  resources :comments
   resources :home
   resources :movies do
     collection do
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   root "inboxes#index"
   resources :inboxes
   resources :tweets
+  resources :events
   
   # resources :inboxes do
   #       member do

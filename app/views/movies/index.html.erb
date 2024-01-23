@@ -81,10 +81,7 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1> Movie Page</h1>
-  </header>
-
+  
   <main>
     <p style="color: green"><%= notice %></p>
 
@@ -97,7 +94,7 @@
       <%= form.search_field :title, data: { action: "input->debounce#search" } %>
     <% end %>
 
-    <h1> Movies </h1>
+  <h1> Movies </h1>
     <div id="movies" >
       <% @movies.each do |movie| %>
         <div class="movie">

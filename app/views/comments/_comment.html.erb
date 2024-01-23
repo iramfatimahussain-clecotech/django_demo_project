@@ -1,0 +1,14 @@
+<div id="<%= dom_id comment %>" class="bg-white border rounded-md p-4 my-6 shadow-md">
+  <p class="my-5">
+    <strong class="block font-medium mb-1 text-blue-700">Body:</strong>
+    <%= comment.body %>
+  </p>
+  <div class="flex items-center justify-between">
+    <% if action_name != "show" %>
+      <%= link_to "Show this comment", comment, data: { action: "click->dialog#open", turbo_frame: :modal }, class: "rounded-lg py-3 px-5 bg-blue-500 text-white font-medium inline-block hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue" %>
+
+      <%= link_to "Edit this comment", edit_comment_path(comment), data: { action: "click->dialog#open", turbo_frame: :modal }, class: "rounded-lg py-3 ml-2 px-5 bg-gray-300 text-gray-800 font-medium inline-block hover:bg-gray-400 focus:outline-none focus:shadow-outline-gray" %>
+      <hr class="mt-6 border-gray-300">
+    <% end %>
+  </div>
+</div>

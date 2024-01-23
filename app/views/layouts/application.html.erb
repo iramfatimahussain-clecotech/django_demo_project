@@ -2,15 +2,29 @@
 <html>
   <head>
     <title>Turboapp</title>
+     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+    <%#= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= Time.zone.now %>
-    <%= yield %>
+  <body id="body" data-controller="dialog" data-action="click->dialog#clickOutside" >
+    <button data-action="click->dialog#open">Open dialog</button>
+    <dialog data-dialog-target="modal"
+            class="backdrop:bg-gray-400 backdrop:bg-opacity-90 z-10 rounded-md border-4 bg-sky-900 w-full md:w-2/3 mt-24">
+      <div class="p-8">
+        <button class="bg-slate-400" data-action="dialog#close">Cancel</button>
+        <%= turbo_frame_tag :modal %>
+      </div>
+    </dialog>
+    <main class="container mx-auto mt-28 px-5 flex">
+     <%= yield %>
+    </main>
   </body>
 </html>

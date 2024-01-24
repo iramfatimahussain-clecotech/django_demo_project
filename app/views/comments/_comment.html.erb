@@ -1,4 +1,4 @@
-<div id="<%= dom_id comment %>" class="bg-white border rounded-md p-4 my-6 shadow-md">
+<!--<div id="<%= dom_id comment %>" class="bg-white border rounded-md p-4 my-6 shadow-md">
   <p class="my-5">
     <strong class="block font-medium mb-1 text-blue-700">Body:</strong>
     <%= comment.body %>
@@ -11,4 +11,14 @@
       <hr class="mt-6 border-gray-300">
     <% end %>
   </div>
-</div>
+</div> -->
+<%= turbo_frame_tag(dom_id(comment), class: "comment-frame") do %>
+  <div class="comment-header">
+    <em>[<%= comment.id %>]</em>
+    <strong><%= comment.user.email.split('@').first.capitalize %></strong>
+  </div>
+  <div class="comment-body">
+    <%= comment.body %>
+  </div>
+<% end %>
+

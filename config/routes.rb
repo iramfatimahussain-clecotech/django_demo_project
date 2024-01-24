@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :posts
   resources :likes
   get 'events/index'
   resources :comments
@@ -8,10 +10,15 @@ Rails.application.routes.draw do
       post :search
     end
   end
-  root "inboxes#index"
+ # root "inboxes#index"
   resources :inboxes
   resources :tweets
   resources :events
+
+  root "posts#index"
+  resources :posts do
+    resources :comments
+  end
   
   # resources :inboxes do
   #       member do

@@ -10,6 +10,24 @@
   Movie.create(title: Faker::Movie.unique.title) 
 end
 
+# 5.times do
+#   Post.create(
+#     title: Faker::Lorem.sentence(word_count: 2),
+#     body: Faker::Lorem.paragraph(sentence_count: 2),
+#     visible: [true, false].sample
+#   )
+# end
+# Create a main sample user.
+User.create!(email: 'dean@example.com',
+             password: 'password',
+             password_confirmation: 'password')
+
+User.create!(email: 'john@doe.com',
+             password: 'password',
+             password_confirmation: 'password')
+
+#Room.create(name: 'Example')
+
 # 2.times do
 #   Event.create(
 #     name: Faker::Lorem.unique.word,

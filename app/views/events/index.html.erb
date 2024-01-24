@@ -1,4 +1,18 @@
-<div>
-  <h1 class="font-bold text-4xl">Events#index</h1>
-  <p>Find me in app/views/events/index.html.erb</p>
+<div class="w-full">
+
+<h1>Events</h1>
+
+<%= turbo_stream_from "events_broadcaster" %>
+
+<%= link_to 'New Event', new_event_path %>
+  <div id="events" class="min-w-full">
+    <%#= render @events %>
+  </div>
+  <details data-turbo-permanent>
+  <summary>Details</summary>
+  Something small enough to escape casual notice.
+  </details>
+<div id="events_list">
+  <%= render 'table' %>
+</div>
 </div>

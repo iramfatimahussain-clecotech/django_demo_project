@@ -11,7 +11,10 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
     <%#= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= javascript_importmap_tags  'cable' %>
+    <%#= turbo_refreshes_with method: :replace, scroll: :reset %>
+    <%= turbo_refreshes_with method: :morph, scroll: :preserve %>
+    <%= yield :head %>
   </head>
 
   <body id="body" data-controller="dialog" data-action="click->dialog#clickOutside" >

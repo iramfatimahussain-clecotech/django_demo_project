@@ -9,3 +9,11 @@
 150.times do
   Movie.create(title: Faker::Movie.unique.title) 
 end
+
+# 2.times do
+#   Event.create(
+#     name: Faker::Lorem.unique.word,
+#     location: Faker::Address.full_address,
+#     start_date: Faker::Time.forward(days: 30)
+#   )
+# end

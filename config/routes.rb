@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :likes
   get 'events/index'
   resources :comments
   resources :home

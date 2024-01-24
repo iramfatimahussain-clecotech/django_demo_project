@@ -73,7 +73,7 @@ default: &default
 
 development:
   <<: *default
-  database: clecotechdev1
+  database: clecotechdev5
   host: localhost
   pool: 5
   username: postgres
@@ -81,7 +81,7 @@ development:
 
 test:
   <<: *default
-  database: clecotechtest1
+  database: clecotechtest5
   host: localhost
   pool: 5
   username: postgres
@@ -89,7 +89,7 @@ test:
 
 production:
   <<: *default
-  database: clecotechdev1
+  database: clecotechdev5
   host: localhost
   pool: 5
   username: postgres

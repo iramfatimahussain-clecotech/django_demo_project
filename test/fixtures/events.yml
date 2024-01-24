@@ -6,7 +6,9 @@ one:
   location: MyString
   string,: MyString
   start_date: MyString
-  date_time: MyString
+  dataetime,: MyString
+  likes_count: MyString
+  integer: MyString
 
 two:
   name: MyString
@@ -14,4 +16,6 @@ two:
   location: MyString
   string,: MyString
   start_date: MyString
-  date_time: MyString
+  dataetime,: MyString
+  likes_count: MyString
+  integer: MyString

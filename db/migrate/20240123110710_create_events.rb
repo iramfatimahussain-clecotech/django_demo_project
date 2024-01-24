@@ -3,8 +3,9 @@ class CreateEvents < ActiveRecord::Migration[7.0]
     create_table :events do |t|
       t.string :name
       t.string :location
-      t.string :start_date
-      t.string :date_time
+      t.datetime :start_date
+      t.integer :likes_count
+    
 
       t.timestamps
     end

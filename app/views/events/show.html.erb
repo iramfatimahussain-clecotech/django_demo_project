@@ -1,0 +1,46 @@
+<div class="mx-auto md:w-2/3 w-full flex">
+  <div class="mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+
+    <div class="border rounded-lg p-4 mb-4 bg-white shadow-md">
+      <%= render @event %>
+
+      <%= link_to "Edit this event", edit_event_path(@event), class: "btn-edit" %>
+      <div class="inline-block ml-2">
+        <%= button_to "Destroy this event", event_path(@event), method: :delete, class: "btn-destroy" %>
+      </div>
+      <%= link_to "Back to events", events_path, class: "btn-back" %>
+    </div>
+  </div>
+</div>
+
+<style>
+.btn-edit,
+.btn-destroy,
+.btn-back {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-edit {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.btn-destroy {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.btn-back {
+  background-color: #95a5a6;
+  color: #fff;
+}
+
+</style>
